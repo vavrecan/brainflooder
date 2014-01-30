@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="dreamThumbnail" type="id"/>
+    <item name="dreamNameText" type="id"/>
+<item name="flood" type="id"/><item name="previewButton" type="id"/><item name="pickDream" type="id"/><item name="dreamsListView" type="id"/><item name="dreamInfoText" type="id"/><item name="dreamImage" type="id"/><item name="headerTextView" type="id"/><item name="selectedDreamText" type="id"/>
+    <item name="textDreamsPath" type="id"/>
+    <item name="createFromGalleryButton" type="id"/>
+    <item name="saveSubliminalsButton" type="id"/>
+    <item name="subliminalsEditText" type="id"/>
+    <item name="directoryPath" type="id"/>
+    <item name="createFromPathButton" type="id"/>
+    <item name="pathListView" type="id"/>
+    <item name="pathItemImage" type="id"/><item name="pathItemGalleryImage" type="id"/><item name="galleryNumberOfImagesTextView" type="id"/><item name="galleryHasMusicTextView" type="id"/><item name="galleryHasSubliminalsTextView" type="id"/>
+</resources>

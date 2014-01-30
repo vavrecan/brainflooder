@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dip" >
+
+    <ImageView
+            android:src="@drawable/no_image"
+            android:layout_width="40dip"
+            android:layout_height="40dip"
+            android:id="@id/pathItemImage"
+            android:scaleType="centerInside"
+            android:layout_marginRight="5dip"
+            android:contentDescription="pathItem" />
+
+    <TextView
+            android:id="@+id/pathItemText"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:text="Name"
+            android:textColor="#040404"
+            android:typeface="sans"
+            android:textSize="16dip"
+            android:ellipsize="end"
+            android:gravity="center_vertical"/>
+
+</LinearLayout>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.craftworks.brainflooder"
+          android:versionCode="101">
+    <uses-sdk android:minSdkVersion="10" />
+
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <uses-permission android:name="android.permission.CAMERA"></uses-permission>
+    <uses-permission android:name="android.permission.FLASHLIGHT"></uses-permission>
+
+    <application android:label="@string/app_name" android:icon="@drawable/icon">
+        <activity android:name="MainActivity"
+                  android:theme="@android:style/Theme.Light.NoTitleBar"
+                  android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".FloodActivity"
+                  android:noHistory="true"
+                  android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"
+                  android:screenOrientation="sensorLandscape"
+                />
+        <activity android:name=".DreamAlarmActivity"
+                  android:noHistory="true"
+                  android:configChanges="keyboardHidden|orientation"
+                  android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen"
+                />
+        <activity android:name=".DreamListActivity"
+                  android:theme="@android:style/Theme.Light.NoTitleBar"
+                />
+        <receiver android:name=".DreamAlarmBroadcastReceiver" android:enabled="true">
+            <intent-filter>
+                <action android:name="com.craftworks.brainflooder"></action>
+            </intent-filter>
+        </receiver>
+
+        <activity android:name=".SubliminalEditorActivity"
+                  android:theme="@android:style/Theme.Light.NoTitleBar"
+                  android:windowSoftInputMode="stateVisible|adjustResize"
+                />
+        <activity android:name=".GalleryBrowserActivity"
+                  android:theme="@android:style/Theme.Light.NoTitleBar"
+                />
+        <activity android:name=".PreferencesActivity" />
+    </application>
+</manifest> 

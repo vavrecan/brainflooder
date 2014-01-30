@@ -1,0 +1,12 @@
+/.idea
+/.idea/*
+/gen
+/gen/*
+/proguard_logs
+/proguard_logs/*
+/bin
+/bin/*
+/assets
+/assets/*
+/out
+/out/*

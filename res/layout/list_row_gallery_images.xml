@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="horizontal"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content">
+
+    <ImageView
+            android:layout_width="100dip"
+            android:layout_height="100dip"
+            android:id="@id/pathItemGalleryImage"
+            android:layout_margin="5dip"
+            android:background="#bebebe"
+            android:focusableInTouchMode="false"/>
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginTop="5dip"
+            android:layout_marginRight="5dip"
+            android:layout_marginBottom="5dip">
+
+        <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Number of pictures: 0"
+                android:id="@id/galleryNumberOfImagesTextView"
+                android:textSize="16dip"
+                android:ellipsize="end"/>
+
+        <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Music: No"
+                android:id="@id/galleryHasMusicTextView"
+                android:textSize="16dip"
+                android:ellipsize="end"/>
+
+        <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Subliminals: No"
+                android:id="@id/galleryHasSubliminalsTextView"
+                android:textSize="16dip"
+                android:ellipsize="end"/>
+    </LinearLayout>
+
+</LinearLayout>

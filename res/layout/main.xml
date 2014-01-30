@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+        >
+
+    <ScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:id="@+id/scrollView">
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:padding="10dip">
+
+            <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Brain Flooder"
+                    android:id="@id/headerTextView"
+                    android:textSize="20dip"
+                    android:textStyle="bold"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:layout_marginBottom="10dip"/>
+
+            <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Nothing selected"
+                    android:id="@id/selectedDreamText"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:textStyle="bold"
+                    android:textSize="16dip"/>
+
+            <Button
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Run Brain Flooding"
+                    android:onClick="onFlood"
+                    android:layout_gravity="left|center_vertical" android:id="@id/flood"/>
+
+            <Button
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Pick Dream"
+                    android:id="@id/pickDream"
+                    android:onClick="onPickDream"/>
+
+            <Button
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Preferences"
+                    android:onClick="onPreferences"
+                    android:id="@+id/preferences"/>
+
+            <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Dream Alarm"
+                    android:id="@+id/alarmTextView"
+                    android:gravity="center_vertical|center_horizontal"/>
+
+            <Button
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Preview"
+                    android:id="@id/previewButton"
+                    android:onClick="onPreviewButton"/>
+
+            <ToggleButton
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="New ToggleButton"
+                    android:id="@+id/toggleButton" android:onClick="onAlarmToggle"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
+

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:title="Settings">
+
+    <PreferenceCategory android:title="Flooding">
+
+        <CheckBoxPreference android:title="Enable duration"
+                            android:summary="Auto close flooding after specific duration"
+                            android:key="durationEnable"
+                            android:defaultValue="true"></CheckBoxPreference>
+
+        <CheckBoxPreference android:title="Music"
+                            android:summary="Play music during flooding"
+                            android:key="playMusic"
+                            android:defaultValue="true"></CheckBoxPreference>
+
+
+        <CheckBoxPreference android:title="Max brightness"
+                            android:summary="Set screen max brightness during flooding"
+                            android:key="maxBrightness"
+                            android:defaultValue="true"></CheckBoxPreference>
+
+        <EditTextPreference android:title="Duration"
+                            android:summary="Duration of the flood in minutes"
+                            android:numeric="signed"
+                            android:key="duration"
+                            android:defaultValue="3"></EditTextPreference>
+
+        <EditTextPreference android:title="FPS"
+                            android:summary="Flooding frames per second"
+                            android:numeric="signed"
+                            android:key="fps"
+                            android:defaultValue="15"></EditTextPreference>
+
+        <EditTextPreference android:title="Subliminal occurrence"
+                            android:summary="1 - always, 0.5 - 50%, 0 - never"
+                            android:numeric="decimal"
+                            android:key="subliminalOccurrence"
+                            android:defaultValue="0.05"></EditTextPreference>
+
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Dream Alarm">
+
+        <CheckBoxPreference android:title="Alarm Music"
+                            android:summary="Play music during alarm"
+                            android:key="dreamAlarmMusic"
+                            android:defaultValue="true"></CheckBoxPreference>
+
+        <CheckBoxPreference android:title="Alarm Flash"
+                            android:summary="Flash LED during alarm (only if available)"
+                            android:key="dreamAlarmFlash"
+                            android:defaultValue="false"></CheckBoxPreference>
+
+        <EditTextPreference android:title="Alarm Duration"
+                            android:summary="Duration of the alarm in minutes"
+                            android:numeric="signed"
+                            android:key="dreamAlarmDuration"
+                            android:defaultValue="2"></EditTextPreference>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Dream Alarm #1">
+
+        <CheckBoxPreference android:title="Enable"
+                            android:summary=""
+                            android:key="dreamAlarm0"
+                            android:defaultValue="true"></CheckBoxPreference>
+
+        <com.craftworks.brainflooder.PreferencesTimePicker
+                            android:title="Time"
+                            android:summary=""
+                            android:key="dreamAlarm0time"
+                            android:defaultValue="04:00"></com.craftworks.brainflooder.PreferencesTimePicker>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Dream Alarm #2">
+
+        <CheckBoxPreference android:title="Enable"
+                            android:summary=""
+                            android:key="dreamAlarm1"
+                            android:defaultValue="false"></CheckBoxPreference>
+
+        <com.craftworks.brainflooder.PreferencesTimePicker
+                android:title="Time"
+                android:summary=""
+                android:key="dreamAlarm1time"
+                android:defaultValue="05:00"></com.craftworks.brainflooder.PreferencesTimePicker>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Dream Alarm #3">
+
+        <CheckBoxPreference android:title="Enable"
+                            android:summary=""
+                            android:key="dreamAlarm2"
+                            android:defaultValue="false"></CheckBoxPreference>
+
+        <com.craftworks.brainflooder.PreferencesTimePicker
+                android:title="Time"
+                android:summary=""
+                android:key="dreamAlarm2time"
+                android:defaultValue="06:00"></com.craftworks.brainflooder.PreferencesTimePicker>
+
+    </PreferenceCategory>
+</PreferenceScreen>
