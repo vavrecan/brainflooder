@@ -4,14 +4,27 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.*;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
 import android.os.Bundle;
+import android.util.Log;
 import android.util.TypedValue;
-import android.view.*;
+import android.view.Gravity;
+import android.view.SurfaceHolder;
+import android.view.SurfaceView;
+import android.view.WindowManager;
 import android.widget.TextView;
 
-import java.io.*;
-import java.util.*;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * Main floodThread activity that will hold surface
@@ -107,10 +120,12 @@ public class FloodActivity extends Activity {
                     synchronized(bitmapCache) {
                         // try to release
                         if (bitmapCache[offset] != null) {
+                            Log.e("com.craftworks.brainflooder", "Recycling #"+offset);
                             bitmapCache[offset].recycle();
                             bitmapCache[offset] = null;
                         }
 
+                        Log.e("com.craftworks.brainflooder", "Adding to cache #"+offset);
                         // save to cache
                         bitmapCache[offset++] = b;
 
@@ -140,6 +155,7 @@ public class FloodActivity extends Activity {
         public Bitmap getImageFromTick(int ticker) {
             synchronized(bitmapCache) {
                 int image = ticker % bitmapMaxCacheSize;
+                Log.e("com.craftworks.brainflooder", "Getting image #" + image);
                 return bitmapCache[image];
             }
         }
@@ -149,13 +165,16 @@ public class FloodActivity extends Activity {
                 BitmapFactory.Options bfOptions = new BitmapFactory.Options();
                 bfOptions.inPurgeable = true;
                 bfOptions.inDither = false;
-                bfOptions.inInputShareable = false;
+                bfOptions.inInputShareable = true;
 
                 Bitmap b = BitmapFactory.decodeFile(image.getAbsolutePath(), bfOptions);
                 Bitmap scaled = AppEnvironment.resizeBitmap(b, imageBoundWidth, imageBoundHeight, false);
 
                 if (scaled != null) {
-                    b.recycle();
+                    // do not recycle bitmap because it will actually remove the image, even resized one.
+                    // Just remove reference
+                    // do not uncomment - b.recycle();
+
                     b = null;
                     return scaled;
                 }
@@ -349,9 +368,11 @@ public class FloodActivity extends Activity {
 
                     // obtain image from cache
                     Bitmap b = cacheUpdater.getImageFromTick(ticker);
-
-                    // draw image to middle of the screen
-                    c.drawBitmap(b, (c.getWidth() / 2) - (b.getWidth() / 2), (c.getHeight() / 2) - (b.getHeight() / 2), null);
+                    if (!b.isRecycled())
+                    {
+                        // draw image to middle of the screen
+                        c.drawBitmap(b, (c.getWidth() / 2) - (b.getWidth() / 2), (c.getHeight() / 2) - (b.getHeight() / 2), null);
+                    }
 
                     // TODO add sublimal messages
                     if (Math.random() < subliminalOccurrence && subliminals.size() > 0) {
