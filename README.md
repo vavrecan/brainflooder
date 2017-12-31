@@ -11,7 +11,7 @@ This application has also use if you want to create association between two thin
 
 ## Author
 - [Marek Vavrecan](mailto:vavrecan@gmail.com)
-- [Donate by PayPal](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=DX479UBWGSMUG&lc=US&item_name=Friend%20List%20Watcher&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted)
+- [Donate by PayPal](https://paypal.me/vavrecan)
 
 ## License
 - [GNU General Public License, version 3](http://www.gnu.org/licenses/gpl-3.0.html)
